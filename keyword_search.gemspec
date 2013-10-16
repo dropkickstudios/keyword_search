@@ -24,7 +24,8 @@ Gem::Specification.new do |s|
      "lib/keyword_search.rb",
      "lib/keyword_search.rl",
      "lib/keyword_search/definition.rb",
-     "test/test_keyword_search.rb"
+     "test/test_keyword_search.rb",
+     "bin/keyword_search"
   ]
   s.homepage = %q{http://github.com/bruce/keyword_search}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -35,6 +36,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "test/test_keyword_search.rb"
   ]
+  s.executables   = ["keyword_search"]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

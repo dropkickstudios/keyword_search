@@ -1,0 +1,11 @@
+require 'keyword_search'
+require 'json'
+search_term = ARGV[0]
+begin
+  results = KeywordSearch.search(search_term)
+  STDOUT.puts( {success:true, results: results}.to_json)
+rescue KeywordSearch::ParseError => e
+  STDOUT.puts( {success:false, parse_error: true, exception_class: e.class.to_s, message: e.message  })
+rescue Exception => e
+  STDOUT.puts( {success:false, parse_error: false, exception_class: e.class.to_s, message: e.message  })
+end
